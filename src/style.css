@@ -1,0 +1,141 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.myListContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  width: 100%;
+  max-width: 500px;
+  padding: 0 0 0 0;
+  margin: 0 auto;
+}
+
+.headlineContainer {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eeee;
+}
+
+h1 {
+  color: #545862;
+  font-size: 14px;
+  padding: 1rem;
+  line-height: 20px;
+  margin: 0;
+  width: 90%;
+  white-space: nowrap;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+.myRefresher {
+  width: 19px;
+  height: 19px;
+  padding-right: 18px;
+  transition: all 0.3s;
+  cursor: pointer !important;
+}
+
+.myRefresher:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.list {
+  list-style-type: none;
+  padding-left: 2px;
+  margin: 0;
+}
+
+.list li {
+  padding: 15px 12px 15px;
+  border-bottom: 1px solid #eeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #3d3d3d;
+}
+
+li div {
+  display: flex;
+  gap: 15px;
+}
+
+#toDo {
+  width: 100%;
+  padding: 0 40px 0 1rem;
+  line-height: 50px;
+  height: 50px;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 0;
+  outline: none;
+}
+
+#toDo::placeholder {
+  font-style: italic;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #adadad;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eeee;
+}
+
+.mySendIcon {
+  width: 17px;
+  height: 17px;
+  padding: 18px;
+  cursor: pointer !important;
+}
+
+img {
+  filter: opacity(40%);
+  transition: all 0.5s ease-in-out;
+  cursor: grab;
+}
+
+img:hover {
+  filter: opacity(80%);
+}
+
+.myOptionIcon {
+  width: 25px;
+  height: 20px;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+#clearAllBtn {
+  width: 100%;
+  border: none;
+  padding: 15px 0 15px 0;
+  color: #a9a9a9;
+  border-top: 1px solid #eeee;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#clearAllBtn:hover {
+  color: #575757;
+  text-decoration: underline;
+}

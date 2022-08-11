@@ -22,7 +22,28 @@ refreshIcon.classList.add('mySendIcon');
 refreshIcon.src = 'https://img.icons8.com/sf-regular/48/000000/return.png';
 input.appendChild(refreshIcon);
 
-const eachList = [];
+const eachList = [
+  {
+    description: 'Take a wash',
+    completed: false,
+    index: 1,
+
+  },
+
+  {
+    description: 'Complete the To-Do List',
+    completed: false,
+    index: 2,
+
+  },
+
+  {
+    description: 'Go to the market at 7pm',
+    completed: false,
+    index: 3,
+
+  },
+];
 
 class NewItemList {
   constructor(listInfo, mybool, listIndex) {
@@ -32,9 +53,16 @@ class NewItemList {
   }
 }
 
+const addByDefault = () => {
+  document.getElementsByClassName('list')[0].innerHTML = eachList.map((e) => `
+  <li id="${e.index}"><div><input type="checkbox" class"${e.completed}">${e.description}</div><img src='https://img.icons8.com/windows/32/000000/menu-2.png' class='myOptionIcon'></li>`).join('');
+  return eachList;
+};
+addByDefault();
+
 const printDynamic = (input) => {
   document.getElementsByClassName('list')[0].innerHTML = input.map((items, index) => `
-  <li id="${index}"><div><input type="checkbox">${items.listInfo}</div><img src='https://img.icons8.com/windows/32/000000/menu-2.png' class='myOptionIcon'></li>`).join('');
+  <li id="${index}"><div><input type="checkbox" class="${items.myBool}">${items.listInfo}</div><img src='https://img.icons8.com/windows/32/000000/menu-2.png' class='myOptionIcon'></li>`).join('');
 };
 
 const addNewList = () => {

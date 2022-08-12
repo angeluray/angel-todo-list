@@ -139,3 +139,7 @@ input[type=checkbox] {
   color: #575757;
   text-decoration: underline;
 }
+
+.myTrash {
+  display: none;
+}

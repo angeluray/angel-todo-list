@@ -22,7 +22,9 @@ refreshIcon.classList.add('mySendIcon');
 refreshIcon.src = 'https://img.icons8.com/sf-regular/48/000000/return.png';
 input.appendChild(refreshIcon);
 
-const eachList = [
+const eachList = [];
+
+/* const eachList = [
   {
     description: 'Take a wash',
     completed: false,
@@ -43,26 +45,26 @@ const eachList = [
     index: 3,
 
   },
-];
+]; */
 
 class NewItemList {
   constructor(listInfo, mybool, listIndex) {
     this.listInfo = listInfo;
-    this.myBool = mybool;
+    this.completed = mybool;
     this.listIndex = listIndex;
   }
 }
 
-const addByDefault = () => {
+/* const addByDefault = () => {
   document.getElementsByClassName('list')[0].innerHTML = eachList.map((e) => `
   <li id="${e.index}"><div><input type="checkbox" class"${e.completed}">${e.description}</div><img src='https://img.icons8.com/windows/32/000000/menu-2.png' class='myOptionIcon'></li>`).join('');
   return eachList;
 };
-addByDefault();
+addByDefault(); */
 
 const printDynamic = (input) => {
   document.getElementsByClassName('list')[0].innerHTML = input.map((items, index) => `
-  <li id="${index}"><div><input type="checkbox" class="${items.myBool}">${items.listInfo}</div><img src='https://img.icons8.com/windows/32/000000/menu-2.png' class='myOptionIcon'></li>`).join('');
+  <li id="${index}"><div><input type="checkbox" class="${items.completed} myInput" id="${index}" name"${index}"><label for="${index}" contenteditable="false">${items.listInfo}</label></div><img src='https://img.icons8.com/windows/32/000000/menu-2.png' class='myOptionIcon'><img src='https://img.icons8.com/material-sharp/24/000000/trash.png' class='myTrash'></li>`).join('');
 };
 
 const addNewList = () => {
@@ -71,9 +73,11 @@ const addNewList = () => {
   const eachItemList = new NewItemList(toDo, false, counter);
   // Push into the array
   eachList.push(eachItemList);
+  console.log(eachList);
 
   // print in the HTML file.
   printDynamic(eachList);
+  localStorage.setItem('tasks', JSON.stringify(eachList));
   return eachList;
 };
 
@@ -83,4 +87,45 @@ document.getElementById('toDo').addEventListener('keypress', (e) => {
     addNewList();
     document.getElementById('toDo').value = '';
   }
+});
+
+refreshIcon.addEventListener('click', () => {
+  const toDo = document.getElementById('toDo').value;
+  if(toDo) {
+    addNewList();
+  }
+  document.getElementById('toDo').value = '';
+});
+
+const deelete = (input) => {
+  // Delet the number by index position
+  eachList.splice(input, 1);
+
+  // Upgrade the DOM
+  printDynamic(eachList);
+
+  /* eachList.forEach((item) => {
+    item.listIndex -= 1;
+    console.log(item.listIndex);
+  }); */
+
+  // Upgrade the Local Storage
+  localStorage.setItem('data', JSON.stringify(eachList));
+
+  return eachList;
+};
+
+//list.addEventListener('click', (e) => {
+  //const { id } = e.target.parentElement;
+  //deelete(id);
+  //list.removeChild(listIt);
+//});
+
+const myLabel = document.querySelectorAll('myEditLabel');
+ 
+const myTrash = document.getElementsByClassName('.myTrash');
+const myOption = document.getElementsByClassName('.myOptionIcon');
+
+myOption.addEventListener('click', () => {
+  console.log('hola');
 });

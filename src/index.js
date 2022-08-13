@@ -3,6 +3,7 @@ import './style.css';
 import { NewItemList, printDynamic, eachList, deelete
 } from './modules/Add&Remove.js';
 
+import { noCompleted } from './modules/interactive.js';
 // HTML Management
 const container = document.querySelector('.myListContainer');
 container.innerHTML = '<div class="headlineContainer"><h1>Today\'s To-Do\'s</h1><img src="https://img.icons8.com/ios-glyphs/30/000000/refresh--v1.png" class="myRefresher"></div>';
@@ -23,6 +24,7 @@ input.innerHTML = `
 <input type="text" id="toDo" placeholder="Add to your list..." required>
 `;
 
+const clearAllBtn = document.getElementById('clearAllBtn');
 const refreshIcon = document.createElement('img');
 refreshIcon.classList.add('mySendIcon');
 refreshIcon.src = 'https://img.icons8.com/sf-regular/48/000000/return.png';
@@ -56,6 +58,10 @@ refreshIcon.addEventListener('click', () => {
     addNewList();
   }
   document.getElementById('toDo').value = '';
+});
+
+clearAllBtn.addEventListener('click', () => {
+  noCompleted();
 });
 
 printDynamic(eachList);

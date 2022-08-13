@@ -140,6 +140,7 @@ input[type=checkbox] {
   text-decoration: underline;
 }
 
-.myTrash {
+ .myOptionIcon {
   display: none;
 }
+

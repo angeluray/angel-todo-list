@@ -119,6 +119,7 @@ img:hover {
 .myOptionIcon {
   width: 25px;
   height: 20px;
+  display: none;
 }
 
 input[type=checkbox] {

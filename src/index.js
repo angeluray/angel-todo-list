@@ -30,7 +30,7 @@ input.appendChild(refreshIcon);
 
 const addNewList = () => {
   const toDo = document.getElementById('toDo').value;
-  const eachItemList = new NewItemList(toDo, false, (eachList.length - 1 + 1));
+  const eachItemList = new NewItemList(toDo, false, (eachList.length + 1));
   // Push into the array
   eachList.push(eachItemList);
   // This code is for testing only console.log(eachList);

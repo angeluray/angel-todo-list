@@ -51,6 +51,7 @@ const printDynamic = (input) => {
     document.querySelector(`#task-${index} input[type="checkbox"]`).addEventListener('input', (e) => {
       e.preventDefault();
       items.completed = e.target.checked;
+      localStorage.setItem('tasks', JSON.stringify(eachList));
     });
 
     document.querySelector(`#task-${index} .myTrash`).addEventListener('click', (e) => {

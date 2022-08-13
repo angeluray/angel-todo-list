@@ -119,6 +119,7 @@ img:hover {
 .myOptionIcon {
   width: 25px;
   height: 20px;
+  display: none;
 }
 
 input[type=checkbox] {
@@ -139,8 +140,3 @@ input[type=checkbox] {
   color: #575757;
   text-decoration: underline;
 }
-
- .myOptionIcon {
-  display: none;
-}
-

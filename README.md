@@ -52,7 +52,7 @@ To get a local copy up and running follow these simple steps.
 - **Webpack**
 
 ## 🌎 Live Demo:
-- [To-Do List Tool](https://angeluray.github.io/toDo-List/)
+- [To-Do List Tool](https://angeluray.github.io/angel-todo-list/)
 > The link is currently not available, right after got the project approved it will be here. 
 
 ## Authors 

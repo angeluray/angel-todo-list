@@ -65,3 +65,5 @@ clearAllBtn.addEventListener('click', () => {
 });
 
 printDynamic(eachList);
+
+export { addNewList as default };
